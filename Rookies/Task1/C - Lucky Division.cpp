@@ -1,10 +1,10 @@
 // ﷽
 // Contest: Get Ready
 // Judge: Virtual Judge
-// URL: https://vjudge.net/contest/676467#problem/A
+// URL: https://vjudge.net/contest/676467#problem/C
 // Memory Limit: 256
 // Time Limit: 2000
-// Start: Sat 30 Nov 2024 01:33:07 PM EET
+// Start: Sat 30 Nov 2024 02:16:35 PM EET
 //
 #include <bits/stdc++.h>
 using namespace std;
@@ -60,19 +60,20 @@ ostream &operator<<(ostream &output, const vector<T> &data) {
 
 void solve() {
   int n;cin>>n;
-  vi v(n);cin>>v;
-  int mninx=0;
-  int mxinx=0;
-  for (int i = 0; i < n; i++) {
-    if (v[i]<=v[mninx])
-      mninx=i;
-    if(v[i]>v[mxinx])
-      mxinx=i;
+  vi arr={4,7,44,47,74,77,444,447,474,477};
+  arr.push_back(4);
+  arr.push_back(7);
+  arr.push_back(47);
+  arr.push_back(74);
+  arr.push_back(447);
+  arr.push_back(474);
+  arr.push_back(477);
+  for(auto&it:arr){
+    if(n%it==0){
+      yes;return;
+    }
   }
-  int ans=mxinx+(n - 1 - mninx);
-  if(mxinx>mninx)
-    ans--;
-  cout<<ans<<endl;
+  no;
 }
 int32_t main() {
 
